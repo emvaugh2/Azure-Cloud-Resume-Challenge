@@ -10,6 +10,10 @@
 
 Chunk 1: Building the Frontend
 
+Step 6 - Azure DNS
+
+We're going to update all of this momentarily. 
+
 Step 5 - HTTPS
 
 We need to make sure our website is using HTTPS for a secure connection. We'll use Azure CDN for this. I know this is Azure Content Delivery Network. I need to go back over exactly what this is used for although I know it makes your content easily assessible to users across the globe because it distributes the content at a location nearest to the user. I still have to review the HTTPS part. 
