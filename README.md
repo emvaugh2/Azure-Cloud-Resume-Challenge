@@ -14,7 +14,7 @@ Chunk 3: Front-end / back-end integration
 
 Step 7 - Javascript 
 
-We'll come back tomorrow. 
+We'll come back tomorrow. Long day. 
 
 
 Chunk 2: Building the API
