@@ -14,6 +14,13 @@ Chunk 3: Front-end / back-end integration
 
 Step 7 - Javascript 
 
+Now, our Python code should hopefully send back an HTTP status code of 200 which the `response` object will accept as ok hence the `response.ok`. The Python code is supposed to generate a text (visitor current count) and an HTTP status. If this looks good, we're going to define a new variable named `result` which we'll get from the actual text of the `response` variable. This text should be `Visitor counter: X`. This is how we'll get our current visitor counter. We'll create a `currentCount` variable by using a RegEx expression to extract the value from the `Visitor counter: X` text by using `parseInt` which just turns your string into an integer. Remeber, `result = response.text` so we'll use our `result` variable with the match method to find a digit using `/\d+/[0]`. Lets review this. The `//` part just says we're about to initialize a RegEx operation. The `\d+` just says we're looking for a multiple number digit (this is just in case our visitor counter is bigger than a single digit). Lastly, this match method returns an array (think of a list for Python). Yes, we only have one value in our array/list but we still have to call that index which is where `[0]` comes into play. That will call the index associated with our visitor counter number. So that explains the entire `parseInt(result.match(/\d+/)[0])`. Once we have that information, we're just going to make a new variable and add 1 to the current count. 
+
+![Image](JavaScriptCRC3.png)
+
+
+Now, just as we define paragraphs and the body of the HTML file, we also have to define the script section of the file using `<script>`. We're going to use an asynchronous function so we can make use of the `await` commands. This allows the function to wait while we retrieve and send data. We're going to use a large `try` statement for both our GET and POST statements. We define a variable name `response` that will store the the value of the current counter from our HTTP Trigger. We use `await` so that our script will wait for the response from our trigger and we use the fetch command with the GET method in order to trigger the GET portion of our Python code. Our Python code will retrieve the current count from the Cosmos DB and send it back to the Javascript code along with the HTTP status which will all be stored in the `response` variable. Think of the `response` variable as an object in Python just for Javascript. 
+
 
 
 ![Image](JavaScriptCRC2.png)
