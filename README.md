@@ -16,11 +16,11 @@ Step 7 - Javascript
 
 
 
-![Image](JavaScriptCRC2.PNG)
+![Image](JavaScriptCRC2.png)
 
 Here, we're creating our Visitor Counter indicator. We're assigning it an Id so we can alter the counter number later on in the script. Think of a ID sort of like a variable we can call on later. 
 
-![Image](JavaScriptCRC1.PNG)
+![Image](JavaScriptCRC1.png)
 
 
 
