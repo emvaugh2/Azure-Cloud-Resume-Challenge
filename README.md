@@ -14,6 +14,17 @@ Chunk 3: Front-end / back-end integration
 
 Step 7 - Javascript 
 
+
+Now, lets update our `response` variable and compute an `await fetch` back to our HTTP Trigger but this time, we're going to use a POST method, create a JSON header, and in the body of our fetch, we're going to include the `newCount` variable which is our updated visitor counter. This will trigger the POST section of our Python code and our code will send the new visitor counter back to the Cosmos DB. 
+
+If we receive an HTTP status code of 200 back from the Python code, we're going to call on our visitor counter ID from earlier and use the `.innertext` method to specify we want to change the text we see for that ID. It will be pretty much the same text string but we're going to add the `newCount` variable onto the end of it. 
+
+Now, I've included some tests to make sure all of my code is working regardless of what value is placed in the code for the visitor counter. At the end, we have to call the function. Then everything should work. 
+
+
+![Image](JavaScriptCRC4.png)
+
+
 Now, our Python code should hopefully send back an HTTP status code of 200 which the `response` object will accept as ok hence the `response.ok`. The Python code is supposed to generate a text (visitor current count) and an HTTP status. If this looks good, we're going to define a new variable named `result` which we'll get from the actual text of the `response` variable. This text should be `Visitor counter: X`. This is how we'll get our current visitor counter. We'll create a `currentCount` variable by using a RegEx expression to extract the value from the `Visitor counter: X` text by using `parseInt` which just turns your string into an integer. Remeber, `result = response.text` so we'll use our `result` variable with the match method to find a digit using `/\d+/[0]`. Lets review this. The `//` part just says we're about to initialize a RegEx operation. The `\d+` just says we're looking for a multiple number digit (this is just in case our visitor counter is bigger than a single digit). Lastly, this match method returns an array (think of a list for Python). Yes, we only have one value in our array/list but we still have to call that index which is where `[0]` comes into play. That will call the index associated with our visitor counter number. So that explains the entire `parseInt(result.match(/\d+/)[0])`. Once we have that information, we're just going to make a new variable and add 1 to the current count. 
 
 ![Image](JavaScriptCRC3.png)
