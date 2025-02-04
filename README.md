@@ -14,7 +14,15 @@ Chunk 3: Front-end / back-end integration
 
 Step 7 - Javascript 
 
-We'll come back tomorrow. Long day. Still going.
+
+
+![Image](JavaScriptCRC2.PNG)
+
+Here, we're creating our Visitor Counter indicator. We're assigning it an Id so we can alter the counter number later on in the script. Think of a ID sort of like a variable we can call on later. 
+
+![Image](JavaScriptCRC1.PNG)
+
+
 
 
 Chunk 2: Building the API
