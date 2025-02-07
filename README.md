@@ -13,7 +13,7 @@ Chunk 3: Front-end / back-end integration
 
 Step 8 - Tests 
 
-tomorrow
+tomorrow. today. 
 
 Step 7 - Javascript 
 
