@@ -13,7 +13,7 @@ Chunk 3: Front-end / back-end integration
 
 Step 8 - Tests 
 
-tomorrow. today. today frfr. manana. Friday? Gig. Done. Final gig done. Fr. nbs
+tomorrow. today. today frfr. manana. Friday? Gig. Done. Final gig done. Fr. nbs. Lord
 
 Step 7 - Javascript 
 
