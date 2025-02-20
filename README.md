@@ -21,10 +21,18 @@ Okay so we're going to go over tests today and how to incorporate that into our 
 Assertions - writing a test to validate the output against a known response. 
 
 Here are some things to think about when making tests:
-> What do you want to test?
-> Are you writing a unit test or an integration test?
-> Create you inputs. Execute the code being tested. Capture the output. Compare the output with an expected result.
-> Think of other behaviors your code would have or additional input that can mess up your code. Test against these things to make sure your code is robust.
+
+-> What do you want to test?
+
+-> Are you writing a unit test or an integration test?
+
+-> Create you inputs. Execute the code being tested. Capture the output. Compare the output with an expected result.
+
+-> Think of other behaviors your code would have or additional input that can mess up your code. Test against these things to make sure your code is robust.
+
+You can use the `.assert` method to do tests. This method has additional methods on it to do common testing such as `.assertEqual(a,b)` and `.assertFalse(x)` so keep this in mind. 
+
+
 
 
 
