@@ -13,7 +13,7 @@ Chunk 3: Front-end / back-end integration
 
 Step 8 - Tests 
 
-tomorrow. today. today frfr. manana. Friday? Gig. Done. Final gig done. Fr. nbs. Lord. Today's the day!
+Okay so we're going to go over tests today and how to incorporate that into our code. I actually need to see if my edited code works first but we'll revisit that when I get back home to my personal laptop. Well, maybe. 
 
 Step 7 - Javascript 
 
