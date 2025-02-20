@@ -18,6 +18,16 @@ Okay so we're going to go over tests today and how to incorporate that into our 
 "Create a new project folder and, inside that, create a new folder called my_sum. Inside my_sum, create an empty file called __init__.py. Creating the __init__.py file means that the my_sum folder can be imported as a module from the parent directory."
 ^^^ I don't think I knew this. 
 
+Assertions - writing a test to validate the output against a known response. 
+
+Here are some things to think about when making tests:
+> What do you want to test?
+> Are you writing a unit test or an integration test?
+> Create you inputs. Execute the code being tested. Capture the output. Compare the output with an expected result.
+> Think of other behaviors your code would have or additional input that can mess up your code. Test against these things to make sure your code is robust.
+
+
+
 Step 7 - Javascript 
 
 
