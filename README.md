@@ -15,6 +15,9 @@ Step 8 - Tests
 
 Okay so we're going to go over tests today and how to incorporate that into our code. I actually need to see if my edited code works first but we'll revisit that when I get back home to my personal laptop. Well, maybe. 
 
+"Create a new project folder and, inside that, create a new folder called my_sum. Inside my_sum, create an empty file called __init__.py. Creating the __init__.py file means that the my_sum folder can be imported as a module from the parent directory."
+^^^ I don't think I knew this. 
+
 Step 7 - Javascript 
 
 
