@@ -32,7 +32,7 @@ Here are some things to think about when making tests:
 
 You can use the `.assert` method to do tests. This method has additional methods on it to do common testing such as `.assertEqual(a,b)` and `.assertFalse(x)` so keep this in mind. 
 
-Word
+Word. Let me review my code again. 
 
 
 
