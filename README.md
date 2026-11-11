@@ -3,12 +3,22 @@
 **Alright I'm starting this challenge over from scratch because I don't remember it. Lets take it on a day-by-day basis.**
 
 Phase 1: Frontend & Azure Hosting
+
 Phase 2: Visitor Counter Backend
+
 Phase 3: Frontend & Backend Integration
+
 Phase 4: Terraform Everything
+
 Phase 5: CI/CD & Security
+
 Phase 6: Testing, Monitoring, & Production Validation
+
 Phase 7: Portfolio & Interview Demo
+
+## 11.11.2026
+
+Lets move on to Phase 1. 
 
 ## 11.10.2026
 
@@ -16,6 +26,10 @@ We're going to set up some cost guardrails first. In Azure, navigate to Cost Man
 
 Alright now Im going go create separate repos for my frontend, backend, and Terraform. I'm going to also create local directories on my local machine for each one of these repos and clone each repo to it's respective directory. You can actually just stay in the overall parent directory (in my case, `Cloud-Resume-Challenge-2026`) and just do git clone three times. But you specifically have to do `git clone <repo-url> <local-directory-name>` so Git will automatically create the folder for you. In the parent directory, run `code .`
 
+
+Okay I created about 5 TF files: version, provider, outputs, variables, and main. We're just going to initialize TF and then make sure we can create a resource group. That's it. Okay Terraform was throwing me an error. It said it was due to my providers.tf file and said I needed to log in. I ran the AZ command to log in, I was logged and then it said there were no subscriptions for my email address. AI had me run `az account clear` and then `az login --tenant <tenant-id>` so make sure I was logged into the right tenant. You can find your tenant ID but literally typing tenant in to the Azure search bar. Afterwards, I also had to run `az account get-access-token` just to make sure we're able to get a token if we need it. It's a validation test. 
+
+We then ran the usual TF commands. We also did `az group list` and saw that our RG was deployed! You can also see it in the portal as well. 
 
 ## 02.01.2025
 
