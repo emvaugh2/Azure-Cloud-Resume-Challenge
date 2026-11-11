@@ -2,11 +2,19 @@
 
 **Alright I'm starting this challenge over from scratch because I don't remember it. Lets take it on a day-by-day basis.**
 
-
+Phase 1: Frontend & Azure Hosting
+Phase 2: Visitor Counter Backend
+Phase 3: Frontend & Backend Integration
+Phase 4: Terraform Everything
+Phase 5: CI/CD & Security
+Phase 6: Testing, Monitoring, & Production Validation
+Phase 7: Portfolio & Interview Demo
 
 ## 11.10.2026
 
 We're going to set up some cost guardrails first. In Azure, navigate to Cost Management + Billing. Click on your subscription (mine is Edward _____) and then under the Cost management blade, click Budgets. Here, you can create a budget alerting system. I made a monthly budget of $50 and created alerts for 50%, 80%, and 100% of my budget being consumed. The doesn't cap your budget. It just lets you know when the spending is reaching these limits. 
+
+Alright now Im going go create separate repos for my frontend, backend, and Terraform. I'm going to also create local directories on my local machine for each one of these repos and clone each repo to it's respective directory. You can actually just stay in the overall parent directory (in my case, `Cloud-Resume-Challenge-2026`) and just do git clone three times. But you specifically have to do `git clone <repo-url> <local-directory-name>` so Git will automatically create the folder for you. In the parent directory, run `code .`
 
 
 ## 02.01.2025
