@@ -3,6 +3,12 @@
 **Alright I'm starting this challenge over from scratch because I don't remember it. Lets take it on a day-by-day basis.**
 
 
+
+## 11.10.2026
+
+We're going to set up some cost guardrails first. In Azure, navigate to Cost Management + Billing. Click on your subscription (mine is Edward _____) and then under the Cost management blade, click Budgets. Here, you can create a budget alerting system. I made a monthly budget of $50 and created alerts for 50%, 80%, and 100% of my budget being consumed. The doesn't cap your budget. It just lets you know when the spending is reaching these limits. 
+
+
 ## 02.01.2025
 
 **Today's Topics**
