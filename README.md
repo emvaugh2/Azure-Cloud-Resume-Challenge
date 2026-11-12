@@ -16,6 +16,21 @@ Phase 6: Testing, Monitoring, & Production Validation
 
 Phase 7: Portfolio & Interview Demo
 
+## 11.12.2026
+
+After you've uploaded all of your files in the right directories, you can go to your `$web` public endpoint (go to the container and click on Properties) and you should be able to access your webpage. It's beautiful, isn't it?
+
+Lets recreate this resource in Terraform before we get too far. You'll be able to find my code in my CRC-Terraform repo. We're going to use terraform import to allow Terraform to manage this resource we already created. First get the id for your storage account using the `az storage account name` command. I'll list out the exact command in my notes file in my repo so search there. Copy that ID and then use the terraform import command listed in my notes as well. I ran into an issue saying the storage account resource does not exist in the configuration. 
+
+So what does Terraform import do? So we added our resource to our main.tf file but Terraform import basically tells Terraform "hey, start to track this. This was created in the portal and I added it to our configs so you need to be aware of it." Terraform does this by using the resource ID provided by Azure. It's unique to that resource (think like an UUID). Then once it's imported, Terraform is aware of it. You can use `terraform state list` to show the resources currently recorded in the Terraform state. 
+
+Do the same command for the static website except change the azurerm part to reflect the new resource. The ID will be the same though. 
+
+Alright lets complete the Azure Front Door part. We'll use the Quick Create option here. A few options: Choose Storage (Static website), your storage account, Enable caching, Choose Ignore Query String, and Enable Compression. Review + create. 
+
+Now, go to your Front Door resource and go to Front Door manager. 
+
+
 ## 11.11.2026
 
 Lets move on to Phase 1. Lets first create our directory tree in the frontend directory. We're creating an `index.html` file, a `css` directory, a `js` directory for JavaScript, and the README.md file which would could've just created from the repo. Now, I already created the HTML file years ago (back in 2022) so I'm going to give this to AI and have it update it. I also have the CSS file but I'm going to steal a better template off of the internet. These files will be publicly hosted in my GitHub so you all can feel free to take them.
