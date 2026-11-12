@@ -18,7 +18,27 @@ Phase 7: Portfolio & Interview Demo
 
 ## 11.11.2026
 
-Lets move on to Phase 1. 
+Lets move on to Phase 1. Lets first create our directory tree in the frontend directory. We're creating an `index.html` file, a `css` directory, a `js` directory for JavaScript, and the README.md file which would could've just created from the repo. Now, I already created the HTML file years ago (back in 2022) so I'm going to give this to AI and have it update it. I also have the CSS file but I'm going to steal a better template off of the internet. These files will be publicly hosted in my GitHub so you all can feel free to take them.
+
+To see the actual deployment, go to your index.html file, right click it and then press open in web browser (mine is Explorer). You should be able to see it there. 
+
+Okay the website is beautiful! Nice! Okay lets create the Storage Account to hold our files. Go into the portal and search for Storage Account.
+
+Lets keep a lot of these configuration basic: Choose Azure Blob Storage, workload is General Purpose, Performance is Standard, and Redundancy is LRS. We don't need anything fancy or costly. We just want to store the files. Some clarity on Azure Storage, the Storage Account is the top-level resource that provides ACCESS to different storage services. For blob storage, containers are organizational boundaries inside the account. 
+
+Azure's static website feature creates a special container called: `$web` so this is where our files will live. Azure makes creating static webpages easier so this is their format. 
+
+For the Advanced tab, leave everything off except the Hot storage. Keep that Hot. On networking, leave everything as default (Enable public network access and public network access scope). Don't add a private endpoint. Choose Microsoft network routing for the Network Routing. For insight, Azure Front Door will sit betwen the public internet and the Storage static website so that will be our security checkpoint in a way. 
+
+For the Data protection, only enable soft delete for blobs and soft delete for containers. For Security, Enable Require secure transfer for REST API operations, storage account key access, and default to Microsoft Entra authorization in the Azure portal. 
+
+Keep Encryption as the default options. Then Review & Create. 
+
+Now go to the Storage Account. On the left hand side, navigate to Data management > Static website. Enable it! Then, enter in `index.html` for your index document name. Now Save it so Azure will create the `$web` container. You should now have a primary endpoint that's based on the generic Azure name. 
+
+Okay, now I need to create basically the same file structure as my Frontend repo but here in `$web` but when I tried to do that, I ran into a permissions issue. Great, AWS IAM roles all over it. Go back to your storage account and click on Access Control (IAM). Press Add Role Assignment and search for Storage Blob Data Contributor. Select it and press next. Then Choose User for the Assign access to. Then Add yourself under the Members. Then just press Review and Assign. 
+
+Once that's done and propagates, you should be able to add files now. Make sure this directory matches what you created on your local device. Just go back to your $web container and upload the three files: index, styles, and visitor files. 
 
 ## 11.10.2026
 
