@@ -16,6 +16,9 @@ Phase 6: Testing, Monitoring, & Production Validation
 
 Phase 7: Portfolio & Interview Demo
 
+## 11.13.2026
+
+
 ## 11.12.2026
 
 After you've uploaded all of your files in the right directories, you can go to your `$web` public endpoint (go to the container and click on Properties) and you should be able to access your webpage. It's beautiful, isn't it?
@@ -32,7 +35,9 @@ Now, go to your Front Door resource and go to Front Door manager. Make sure unde
 
 Alright, lets get the custom domain name going. I chose `evcloudresumechallenge.com` again and had to pay $12 for it. Go back to Front Door and navigate to Settings > Domains > Add a domain. Choose Non-Azure validated domain and All other DNS services. Then enter your www.<url_name>.com. Leave everything else as default and then hit Add. 
 
-Click on the new domain name entry you created. Click the Pending status more specifically. You should be given an TXT record with the record name and value. 
+Click on the new domain name entry you created. Click the Pending status more specifically. You should be given an TXT record with the record name and value. Put the record name in the Name field and record value in the Content field. As least in Cloudflare that's how you'll do it. Okay, navigate back to your domain in AFD and on the right hand side, click the three dots. You'll see the `Associate` option. Choose that and then Select endpoint. Use your azurefd.net endpoint. Also choose your default-route for Select routes as well. Finally, go into Cloudflare and make a CNAME record. The Name will be `www` and then content will be your AFD url without any leading values. So the same URL you see on the AFD Overview page. 
+
+You'll have to give this some time to propagate. While that was happening, I defined all of my Terraform blocks and started to import them. I ran into the silliest issue with the first CDN block. The g in resourcegroups in the reousrce ID wasn't capitalized so that caused the import to fail. I would've never noticed that. Same thing with the endpoint. The E in afdEndpoints had to be capitalized. I imported the 4 Front Door resources so we're good there. 
 
 
 ## 11.11.2026
