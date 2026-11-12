@@ -18,6 +18,23 @@ Phase 7: Portfolio & Interview Demo
 
 ## 11.13.2026
 
+Lets create the database resource for our backend. We'll do Azure Cosmos DB for NoSQL. Pretty much keep everything default here. After the DB is created, go to Data Explorer and create a database. Then create a container. Now click on the container that you created and click Items. Then New Item. Paste this syntax into the field:
+
+```
+{
+  "id": "visitorCount",
+  "count": 0
+```
+
+Now lets create our Azure Function. When creating the Function, use the Python Runtime stack. Everything else is default. 
+
+Okay once that's deployed, lets just fix the CORS part now. CORS - cross-origin resource sharing. I added my `https://www.evcloudresumechallenge.com` and the one without `www` to this list and Saved it. You can get here by going to your Function App and navigating to API > CORS. 
+
+Okay lets move to the CRC-Backend directory on my local machine. We'll run the coommands
+```
+func init . --python
+func new
+```
 
 ## 11.12.2026
 
