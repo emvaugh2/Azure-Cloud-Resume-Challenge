@@ -36,6 +36,13 @@ func init . --python
 func new
 ```
 
+Lets go into our Database and grab the connection string. This will allow our Function to talk to our DB. Go to your DB and navigate to Keys. You should see your Primary Connection String. Copy that and open your local.settings.json. Add it in your values section using the syntax:
+
+```
+"CosmosDbConnectionString": "AccountEndpoint=https://azure.com;"
+```
+Now, add the azure-cosmos package to your requirements.txt file (you can see mine in my repo). Afterwards, install the packages using `pip install --no-cache-dir -r requirements.txt`. 
+
 ## 11.12.2026
 
 After you've uploaded all of your files in the right directories, you can go to your `$web` public endpoint (go to the container and click on Properties) and you should be able to access your webpage. It's beautiful, isn't it?
