@@ -28,7 +28,11 @@ Do the same command for the static website except change the azurerm part to ref
 
 Alright lets complete the Azure Front Door part. We'll use the Quick Create option here. A few options: Choose Storage (Static website), your storage account, Enable caching, Choose Ignore Query String, and Enable Compression. Review + create. 
 
-Now, go to your Front Door resource and go to Front Door manager. 
+Now, go to your Front Door resource and go to Front Door manager. Make sure under your manager and your origin groups that both of the default-origins use HTTPS for the protocols. If they don't, your website will not load. I ran into this issue for 20 minutes because Front Door may have needed to propagate the changes but turns out the settings were wrong. 
+
+Alright, lets get the custom domain name going. I chose `evcloudresumechallenge.com` again and had to pay $12 for it. Go back to Front Door and navigate to Settings > Domains > Add a domain. Choose Non-Azure validated domain and All other DNS services. Then enter your www.<url_name>.com. Leave everything else as default and then hit Add. 
+
+Click on the new domain name entry you created. Click the Pending status more specifically. You should be given an TXT record with the record name and value. 
 
 
 ## 11.11.2026
