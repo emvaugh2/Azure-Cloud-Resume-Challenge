@@ -16,6 +16,17 @@ Phase 6: Testing, Monitoring, & Production Validation
 
 Phase 7: Portfolio & Interview Demo
 
+## 11.14.2026
+
+Okay I asked AI to help me figure out the structure of my JavaScript (JS) code before I started searching the internet. I told it my mental workflow and it said that was correct. It then told me the 3 things I would need to code my workflow so I googled that. After some feedback, they said my `JSON.parse` piece was wrong because my API doesn't return back raw text. It returns an HTTP Response (headers, status codes, and body). It fixed that and reworked my DOMContentLoaded block. The workflow for this is the DOMContentLoaded block says wait until my index.html file is completed loaded and THEN run the function below. We defined the function below with the block below that called the async function block. We can do this out of order because of a concept called hoisting. 
+
+The function block really just says lets define a variable named response. The information in response will be filled using the values we get from fetching the HTTP response from our URL. That's an HTTP response, not JSON but we want the JSON values out of it. So our next line, const countJson, will take our response variable and turn it into JSON. Then our last line const count says retrieve the count value from our countJson array. 
+
+Thats it! Easy peasy. 
+
+I had to add my Azure Front Door endpoint to my CORS as well. I also had to update my index.html file and my css file for the Page Views. I'm going to stop here for now because I'm definitely getting tired. 
+
+
 ## 11.13.2026
 
 Lets create the database resource for our backend. We'll do Azure Cosmos DB for NoSQL. Pretty much keep everything default here. After the DB is created, go to Data Explorer and create a database. Then create a container. Now click on the container that you created and click Items. Then New Item. Paste this syntax into the field:
@@ -42,6 +53,20 @@ Lets go into our Database and grab the connection string. This will allow our Fu
 "CosmosDbConnectionString": "AccountEndpoint=https://azure.com;"
 ```
 Now, add the azure-cosmos package to your requirements.txt file (you can see mine in my repo). Afterwards, install the packages using `pip install --no-cache-dir -r requirements.txt`. 
+
+Copilot is down so I'm going to use Google AI + whatever resources I can find online. So back to the Python virtual environment. You can literally google this. We did this a few times in labs so I'm not going to write the directions here. Use the above `pip install` command to install the packages and use `pip list` to verify that they're in the list. 
+
+Okay s/o to Google AI. It definitely walked me through the process of creating this code and helping me work through the code I found online. I have to go back over the classes, instances, all that Python stuff. I don't remember it and how they store values. And how you insert values into where they store it. I just kind of remember how to call upon them (a lot of layer1.layer2.layer3 with the dots and stuff). Anyway, we only made 6 lines of code honestly. We needed to connect to our Azure Cosmos DB resource, ask it for the database, then ask it for the container inside of that database. After that, we asked for the item and partition key. We updated the item value (count), and then update the count in the database. 
+
+We removed the try/except parts of the code (I couldn't even really read it honestly) and updated the HttpResponse with just the VisitorCount and what the current value is. We also put in an HTTP 200 OK response. To run this in your local machine, run func start and once you get the green local URL, press Ctrl + Click and you should see your validation information there. You can also check the portal to see if your counter increased. 
+
+So apparently we need to push our function code up to our app. We'll use `func azure functionapp publish <your_function_app_name>`. Also, maybe before doing this, add your `CosmosDbConnectionString` environment variable to your Azure Function. Grab the primary key string from your Cosmos DB and then head to your Azure Function resource. Navigate to Settings > Environment variables and here, add a new entry under App settings. Hit Apply afterwards. My function app name is `ev-crc-function` btw. 
+
+Once you run the publish command, you'll get a public URL and when you visit this URL, your count will increment! Now we're cooking!
+
+
+
+
 
 ## 11.12.2026
 
