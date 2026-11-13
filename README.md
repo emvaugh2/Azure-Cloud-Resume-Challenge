@@ -18,6 +18,9 @@ Phase 7: Portfolio & Interview Demo
 
 ## 11.14.2026
 
+SN, just learned a cool Terraform trick. You can put the resource that you want to create in your TF code but leave it blank. So just the resource and the curly brackets. Run terraform validate. TF will show you all the missing variables it needs to create the resource. 
+
+
 Okay I asked AI to help me figure out the structure of my JavaScript (JS) code before I started searching the internet. I told it my mental workflow and it said that was correct. It then told me the 3 things I would need to code my workflow so I googled that. After some feedback, they said my `JSON.parse` piece was wrong because my API doesn't return back raw text. It returns an HTTP Response (headers, status codes, and body). It fixed that and reworked my DOMContentLoaded block. The workflow for this is the DOMContentLoaded block says wait until my index.html file is completed loaded and THEN run the function below. We defined the function below with the block below that called the async function block. We can do this out of order because of a concept called hoisting. 
 
 The function block really just says lets define a variable named response. The information in response will be filled using the values we get from fetching the HTTP response from our URL. That's an HTTP response, not JSON but we want the JSON values out of it. So our next line, const countJson, will take our response variable and turn it into JSON. Then our last line const count says retrieve the count value from our countJson array. 
