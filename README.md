@@ -16,6 +16,10 @@ Phase 6: Testing, Monitoring, & Production Validation
 
 Phase 7: Portfolio & Interview Demo
 
+## 11.15.2026
+
+Lets end this off with the CI/CD pipeline for each repo! We'll start with the Frontend.
+
 ## 11.14.2026
 
 SN, just learned a cool Terraform trick. You can put the resource that you want to create in your TF code but leave it blank. So just the resource and the curly brackets. Run terraform validate. TF will show you all the missing variables it needs to create the resource. 
