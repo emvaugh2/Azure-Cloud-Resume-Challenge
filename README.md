@@ -18,7 +18,9 @@ Phase 7: Portfolio & Interview Demo
 
 ## 11.15.2026
 
-Lets end this off with the CI/CD pipeline for each repo! We'll start with the Frontend.
+Lets end this off with the CI/CD pipeline for each repo! We'll start with the Frontend. So the workflow is edit the index.html file, git push, GitHub Actions, log into Azure, upload files to Static Website Storage. So, in the front end, we need to build the tree directory for the GitHub Actions automation. Create the director `.github/workflows/` and put your YAML file here. Next, we ran an `az ad sp create-for-rbac` command to create a profile with the Storage Blob Data Contributor role that we'll assign to our GitHub Actions secret so GitHub Actions can interact with our Frontend storage container. When you run the command, take your output and paste in into your Secrets and Variables. Go to Actions and clean New Repository Secret. We had to edit the deploy file to include the `no-auth` line in there because we ran into a NoAuthenticationInformation error for the deployment. But after we cleaned that up, our deployment worked!
+
+On to the Backend. So the process is whatever edits we make to the Python code, it will use the `func azure functionapp publish ev-crc-function` command to push those updates up to Azure Functions. 
 
 ## 11.14.2026
 
